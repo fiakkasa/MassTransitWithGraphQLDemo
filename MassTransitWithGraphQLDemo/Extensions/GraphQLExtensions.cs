@@ -13,6 +13,7 @@ public static class GraphQLExtensions
             .AddQueryType()
             .AddSubscriptionType()
             .AddTypeExtension<HelloQueries>()
+            .AddTypeExtension<QuotesQueries>()
             .AddTypeExtension<QuotesSubscriptions>();
 
         return services;

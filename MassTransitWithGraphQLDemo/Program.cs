@@ -1,4 +1,5 @@
 using MassTransitWithGraphQLDemo.Extensions;
+using MassTransitWithGraphQLDemo.Interfaces;
 using MassTransitWithGraphQLDemo.Services;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -8,6 +9,7 @@ var services = builder.Services;
 services.AddMassTransitServices();
 services.AddGraphQLServices();
 
+services.AddSingleton<IQuotesService, QuotesService>();
 services.AddHostedService<QuotesProducerService>();
 
 var app = builder.Build();
