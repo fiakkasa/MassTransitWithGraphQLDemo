@@ -22,6 +22,6 @@ where T : class
             context.CancellationToken
         );
 
-        logger.LogInformation("Propagated type '{Type}'! to GraphQL", _typeName);
+        logger.LogInformation("Propagated type '{Type}' to GraphQL!", _typeName);
     }
 }

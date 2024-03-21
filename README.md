@@ -6,11 +6,34 @@ Quick demo of using MassTransit and HotChocolate!
 
 ```graphql
 subscription {
-    onQuote {
-        text
-        author
-        timestamp
-    }
+  onQuote {
+    text
+    author
+    timestamp
+  }
+}
+
+subscription {
+  onQuoteByAuthor(author: "Lao Tzu") {
+    text
+    author
+    timestamp
+  }
+}
+
+subscription {
+  onQuoteByAuthors(authors: ["Lao Tzu", "Steve Jobs", "Mahatma Gandhi"]) {
+    text
+    author
+    timestamp
+  }
+}
+
+query {
+  quotes {
+    author
+    text
+  }
 }
 ```
 
